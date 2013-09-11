@@ -12,10 +12,10 @@ LyricsPlugin.prototype.getTitleFromPage = function(){
 
 LyricsPlugin.prototype.setTitleFromPage = function(){
   // Set the video's title
-  var song = $('#playerSongTitle').text(),
-      artist = $('#playerArtist').text();
+  var song = $('#playerSongTitle').text() || $('#player-song-title').text(),
+      artist = $('#playerArtist').text() || $('#player-artist').text();
       
-  if(song.length === 0 && artist.length === 0){
+  if (song.length === 0 && artist.length === 0) {
     this.currentLyrics.title = "";
   } else {
     this.currentLyrics.title = song + ' - ' + artist;
